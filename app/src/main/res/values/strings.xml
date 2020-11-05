@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">ProyectIrso</string>
+    <string name="txt_pass_String">Contraseña</string>
+    <string name="txt_usuario_String">Usuario</string>
+    <string name="btn_ingresar">Ingresar</string>
+    <string name="btn_registrar">Registrar</string>
+    <string name="txt_nombre_String">Ingrese su Nombre y Apellido</string>
+    <string name="txt_mail_String">Ingrese su usuario E-Mail</string>
+    <string name="txt_telf_String">Teléfono</string>
+    <string name="txt_clave_String">Ingrese una contraseña</string>
+    <string name="txt_confirmaclave_String">Confirme su contraseña</string>
+    <string name="btn_registrado">Registrarse</string>
+    <string name="btn_atras">Ir atras</string>
+    <string name="txt_titulo_String">Título</string>
+    <string name="txt_descripcion_String">Descripción</string>
+    <string name="txt_ubicacion_String">Ubicación</string>
+    <string name="btn_agregarEvento">Agregar Evento</string>
+    <string name="txt_consultarEvento">Consultar Evento</string>
+    <string name="txt_volverAtras">Volver Atrás</string>
+    <string name="tv_Eventos_String">EVENTOS</string>
+    <string name="txt_namealumno">Ingrese nombre del Alumno</string>
+    <string name="txt_surnamealumno">Ingrese apellido del Alumno</string>
+    <string name="txt_dnialumno">Ingrese DNI del Alumno</string>
+    <string name="btn_regalumno">Registrar</string>
+    <string name="btn_consultalumno">Lista de Alumnos</string>
+    <string name="chooser_title" />
+
+
+</resources>

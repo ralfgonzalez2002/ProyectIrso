@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity_Alumnos">
+
+    <EditText
+        android:id="@+id/txt_dnialumno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="352dp"
+        android:ems="10"
+        android:hint="@string/txt_dnialumno"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/txt_surnamealumno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="@string/txt_surnamealumno"
+        android:inputType="textPersonName"
+        android:text="@string/txt_surnamealumno"
+        app:layout_constraintBottom_toTopOf="@+id/txt_dnialumno"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/txt_namealumno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="@string/txt_namealumno"
+        android:inputType="textPersonName"
+        android:text="@string/txt_namealumno"
+        app:layout_constraintBottom_toTopOf="@+id/txt_surnamealumno"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_regalumno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginTop="68dp"
+        android:onClick="RegistrarAlumno"
+        android:text="@string/btn_regalumno"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_dnialumno"
+        tools:text="@string/btn_regalumno" />
+
+    <Button
+        android:id="@+id/btn_consultalumno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/btn_consultalumno"
+        app:layout_constraintStart_toEndOf="@+id/btn_regalumno"
+        app:layout_constraintTop_toBottomOf="@+id/txt_dnialumno"
+        tools:text="@string/btn_consultalumno" />
+</androidx.constraintlayout.widget.ConstraintLayout>
