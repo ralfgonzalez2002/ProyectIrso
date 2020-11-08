@@ -1,111 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity_Registro">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textColor="#FFFDFD"
+        android:gravity="center_vertical"
+        android:text="        COMPLETE SU REGISTRO"
+        android:background="@color/ic_launcher_background"
+        android:textSize="28dp"/>
+
     <EditText
         android:id="@+id/txt_nombre"
         android:layout_width="251dp"
         android:layout_height="53dp"
+        android:layout_above="@+id/txt_materia"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_marginStart="88dp"
         android:layout_marginLeft="88dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="15dp"
+        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         android:ems="10"
         android:gravity="center_horizontal"
         android:hint="@string/txt_nombre_String"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txt_telf"
-        app:layout_constraintStart_toStartOf="parent"
         android:maxLength="50"
-        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
+        app:layout_constraintBottom_toTopOf="@+id/txt_telf"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/txt_mail"
         android:layout_width="251dp"
         android:layout_height="53dp"
+        android:layout_above="@+id/txt_nombre"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_marginStart="88dp"
         android:layout_marginLeft="88dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="15dp"
         android:ems="10"
         android:gravity="center_horizontal"
         android:hint="@string/txt_mail_String"
         android:inputType="textEmailAddress"
+        android:maxLength="70"
         app:layout_constraintBottom_toTopOf="@+id/txt_clave"
-        app:layout_constraintStart_toStartOf="parent"
-        android:maxLength="70"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/txt_telf"
         android:layout_width="251dp"
         android:layout_height="53dp"
+        android:layout_above="@+id/txt_clave"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_marginStart="88dp"
         android:layout_marginLeft="88dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="15dp"
+        android:digits="0123456789"
         android:ems="10"
         android:gravity="center_horizontal"
         android:hint="@string/txt_telf_String"
         android:inputType="phone"
-        app:layout_constraintBottom_toTopOf="@+id/btn_registrado"
-        app:layout_constraintStart_toStartOf="parent"
         android:maxLength="10"
-        android:digits="0123456789"/>
+        app:layout_constraintBottom_toTopOf="@+id/btn_registrado"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_registrado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginBottom="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="105dp"
+        android:layout_marginLeft="97dp"
+        android:layout_marginBottom="55dp"
+        android:background="@color/ic_launcher_background"
         android:onClick="Registrar"
         android:text="@string/btn_registrado"
+        android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_atras"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginBottom="48dp"
-        android:onClick="IrAtras"
-        android:text="@string/btn_atras"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_registrado" />
 
     <EditText
         android:id="@+id/txt_clave"
         android:layout_width="251dp"
         android:layout_height="53dp"
+        android:layout_above="@+id/txt_cofirmclave"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_marginStart="88dp"
         android:layout_marginLeft="88dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="15dp"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         android:ems="10"
         android:gravity="center_horizontal"
         android:hint="@string/txt_clave_String"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/txt_cofirmclave"
-        app:layout_constraintStart_toStartOf="parent"
         android:maxLength="20"
-        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"/>
+        app:layout_constraintBottom_toTopOf="@+id/txt_cofirmclave"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/txt_cofirmclave"
         android:layout_width="251dp"
         android:layout_height="53dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginBottom="40dp"
+        android:layout_above="@+id/btn_registrado"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="86dp"
+        android:layout_marginLeft="86dp"
+        android:layout_marginBottom="20dp"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         android:ems="10"
         android:gravity="center_horizontal"
         android:hint="@string/txt_confirmaclave_String"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/txt_nombre"
-        app:layout_constraintStart_toStartOf="parent"
         android:maxLength="20"
-        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintBottom_toTopOf="@+id/btn_atras"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/txt_materia"
+        android:layout_width="251dp"
+        android:layout_height="53dp"
+        android:layout_above="@+id/txt_telf"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:hint="@string/txt_materia"
+        android:inputType="textPersonName"
+        android:gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/btn_atras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginRight="-214dp"
+
+        android:layout_marginBottom="55dp"
+
+        android:layout_toRightOf="@+id/btn_registrado"
+        android:background="@color/ic_launcher_background"
+        android:onClick="IrAtras"
+        android:text="@string/btn_atras"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent" />
+
+</RelativeLayout>

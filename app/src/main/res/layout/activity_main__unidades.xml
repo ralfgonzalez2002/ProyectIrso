@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity_ListaAlumnos">
+    tools:context=".MainActivity_Unidades">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textColor="#FFFDFD"
         android:gravity="center_vertical"
-        android:text="        LISTADO DE ALUMNOS"
+        android:text="        LISTADO DE UNIDADES"
         android:background="@color/ic_launcher_background"
         android:textSize="28dp"/>
 
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"></ScrollView>
 
     <ListView
-        android:id="@+id/lv_alumnos"
+        android:id="@+id/lv_unidades"
         android:layout_width="359dp"
         android:layout_height="384dp"
         android:layout_alignParentStart="true"
@@ -31,48 +31,33 @@
         android:layout_marginBottom="143dp" />
 
     <Button
-        android:id="@+id/btn_iralumnos"
+        android:id="@+id/btn_cargarunidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="58dp"
-        android:layout_marginLeft="58dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginBottom="57dp"
         android:background="@color/ic_launcher_background"
-        android:onClick="IrAlumnos"
-        android:text="Ir ALumnos"
+        android:onClick="IrCargarUnidad"
+        android:text="@string/btn_cargarunidad"
         android:textColor="@color/cardview_light_background" />
 
     <Button
-        android:id="@+id/btn_compartir"
+        android:id="@+id/btn_volveratras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
         android:layout_marginBottom="56dp"
-        android:layout_toEndOf="@+id/btn_iralumnos"
-        android:layout_toRightOf="@+id/btn_iralumnos"
-        android:enabled="true"
-        android:onClick="buttonShareFile"
-        android:text="Compartir"
+        android:layout_toEndOf="@+id/btn_cargarunidad"
+        android:layout_toRightOf="@+id/btn_cargarunidad"
+        android:onClick="IrInicio"
+        android:text="@string/btn_volveratras"
         android:background="@color/ic_launcher_background"
         android:textColor="@color/cardview_light_background"/>
 
-    <Button
-        android:id="@+id/btn_irinicio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginBottom="56dp"
-        android:layout_toEndOf="@+id/btn_compartir"
-        android:layout_toRightOf="@+id/btn_compartir"
-        android:onClick="goToIndex"
-        android:text="@string/btn_irinicio"
-        android:background="@color/ic_launcher_background"
-        android:textColor="@color/cardview_light_background"/>
 </RelativeLayout>

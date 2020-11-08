@@ -8,7 +8,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,19 +15,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity_ListaAlumnos"></activity>
-        <activity android:name=".MainActivity_Alumnos" />
-        <activity android:name=".MainActivity_Calendar" />
-        <activity android:name=".MainActivity_Registro"
-            android:parentActivityName=".MainActivity_Login" />
-        <activity android:name=".MainActivity_Inicio" />
         <activity android:name=".MainActivity_Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity_Registro"
+            android:parentActivityName=".MainActivity_Calendar" />
+        <activity android:name=".MainActivity_Inicio"/>
+        <activity android:name=".MainActivity_Calendar"
+            android:parentActivityName=".MainActivity_Login"/>
+        <activity android:name=".MainActivity_Alumnos"
+            android:parentActivityName=".MainActivity_Inicio"/>
+        <activity android:name=".MainActivity_Unidades"/>
+        <activity android:name=".MainActivity_CargaUnidad"
+            android:parentActivityName=".MainActivity_Inicio"/>
+        <activity android:name=".MainActivity_ListaAlumnos"
+            android:parentActivityName=".MainActivity_Inicio"/>
+
+
+
+
+
     </application>
 
 </manifest>

@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="my_toolbar" type="id" />
+    <item name="btn_registrado" type="id" />
+    <item name="txt_cofirmclave" type="id" />
+    <item name="txt_telf" type="id" />
+    <item name="txt_materia" type="id" />
+    <item name="txt_nombre" type="id" />
 </resources>

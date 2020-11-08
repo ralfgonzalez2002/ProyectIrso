@@ -15,6 +15,7 @@ import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class MainActivity_ListaAlumnos extends AppCompatActivity {
     private String stringFile = Environment.getExternalStorageDirectory().getPath() + File.separator + "ListaAlumnos.csv";
 
     ListView lv;
+    Button btn_compartir;
     ArrayList<String> lista;
     ArrayAdapter adaptador;
 
@@ -78,6 +80,8 @@ public class MainActivity_ListaAlumnos extends AppCompatActivity {
 
             if (cantidad == 0) {
                 Toast.makeText(this, "No se encontraron registros", Toast.LENGTH_SHORT).show();
+                Button boton = (Button) findViewById(R.id.btn_compartir);
+                boton.setEnabled(false); //Asigna valor false.
 
             } else {
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arreglo);
@@ -100,7 +104,6 @@ public class MainActivity_ListaAlumnos extends AppCompatActivity {
         }
         Intent intentShare = new Intent(Intent.ACTION_SEND);
         intentShare.setType("application/csv");
-        intentShare.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://"+logDir));
         startActivity(Intent.createChooser(intentShare, "Share the file ..."));
     }
 
@@ -121,7 +124,8 @@ public class MainActivity_ListaAlumnos extends AppCompatActivity {
             Cursor curCSV = BaseDeDatos.rawQuery("SELECT * FROM alumnos", null);
             csvWriter.writeNext(curCSV.getColumnNames());
             while (curCSV.moveToNext()) {
-                String arrStr[] = {curCSV.getString(0) + "," +curCSV.getString(1) + ","+ curCSV.getString(2) + ","+curCSV.getString(4) + ","};
+                String arrStr[] = {curCSV.getString(0) + "," +curCSV.getString(1) + ","+
+                        curCSV.getString(2) + ","+curCSV.getString(4) + ","};
                 csvWriter.writeNext(arrStr);
             }
             csvWriter.close();
@@ -129,11 +133,10 @@ public class MainActivity_ListaAlumnos extends AppCompatActivity {
 
             Toast.makeText(this, "Archivo generado.", Toast.LENGTH_LONG).show();
 
-
             Intent intent = new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS);
             startActivity(intent);
 
-            // return true;
+
         } catch (Exception e) {
             Log.e("MainActivity", e.getMessage(), e);
             //   return false;
@@ -143,6 +146,12 @@ public class MainActivity_ListaAlumnos extends AppCompatActivity {
 
     public void IrAlumnos(View view) {
         Intent intent = new Intent(this, MainActivity_Alumnos.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void goToIndex(View view) {
+        Intent intent = new Intent(this, MainActivity_Inicio.class);
         startActivity(intent);
         finish();
     }

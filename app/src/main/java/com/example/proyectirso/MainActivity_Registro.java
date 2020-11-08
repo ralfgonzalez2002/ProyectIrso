@@ -32,8 +32,9 @@ public class MainActivity_Registro extends AppCompatActivity {
         setContentView(R.layout.activity_main__registro);
         //Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
         //setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 
         TelephonyManager telephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
 

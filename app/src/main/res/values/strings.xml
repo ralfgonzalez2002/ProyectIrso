@@ -23,6 +23,14 @@
     <string name="txt_dnialumno">Ingrese DNI del Alumno</string>
     <string name="btn_regalumno">Registrar</string>
     <string name="btn_consultalumno">Lista de Alumnos</string>
+    <string name="txt_unidad_String">Ingrese el nombre de la unidad</string>
+    <string name="txt_descripcionu_String">Ingrese la descripción de su unidad...</string>
+    <string name="btn_guardarunidad">Guardar</string>
+    <string name="btn_verunidades">Ver Unidades</string>
+    <string name="btn_cargarunidad">Cargar Unidad</string>
+    <string name="btn_volveratras">Volver Atras</string>
+    <string name="btn_irinicio">Volver Atras</string>
+    <string name="txt_materia">Ingrese su Materia</string>
     <string name="chooser_title" />
 
 

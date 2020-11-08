@@ -12,8 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.Calendar;
-
 public class MainActivity_Calendar extends AppCompatActivity {
     EditText titulo;
     EditText ubicacion;
@@ -29,7 +27,7 @@ public class MainActivity_Calendar extends AppCompatActivity {
 
         titulo = findViewById(R.id.et_titulo);
         ubicacion = findViewById(R.id.et_ubicacion);
-        descripcion = findViewById(R.id.et_descripcion);
+        descripcion = findViewById(R.id.txt_descripcion);
         agregarEvento = findViewById(R.id.btn_agregar);
         consultarEventos = findViewById(R.id.btn_consultar);
         volverAtras = findViewById(R.id.btn_atras);
@@ -73,5 +71,11 @@ public class MainActivity_Calendar extends AppCompatActivity {
                 startActivity(intent);
             }
        });
+    }
+
+    public void volverInicio(View view) {
+        Intent intent = new Intent(this, MainActivity_Inicio.class);
+        startActivity(intent);
+        finish();
     }
 }

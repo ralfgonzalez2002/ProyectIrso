@@ -17,6 +17,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase BaseDeDatos) {
         BaseDeDatos.execSQL("create table profesores(codigo int primary key, mail text, clave text, nombre text, telf text)");
         BaseDeDatos.execSQL("create table alumnos(codigo integer primary key autoincrement, nombre String, apellido String, dni String)");
+        BaseDeDatos.execSQL("create table unidades(codigo integer primary key autoincrement, nombre String, descripcion String)");
     }
 
     public void onUpgrade(SQLiteDatabase BaseDeDatos, int oldversion, int newVersion){

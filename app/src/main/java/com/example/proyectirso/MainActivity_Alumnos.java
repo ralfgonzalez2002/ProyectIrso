@@ -47,18 +47,17 @@ public class MainActivity_Alumnos extends AppCompatActivity {
             Toast.makeText(this, "Registro exitoso", Toast.LENGTH_LONG).show();
 
 
-            Intent intent = new Intent(this, MainActivity_ListaAlumnos.class);
+            Intent intent = new Intent(this, MainActivity_Alumnos.class);
             startActivity(intent);
             finish();
         }else Toast.makeText(this, "Debe completar todos los campos", Toast.LENGTH_SHORT).show();
         return null;
     }
+
+    public void irListaAlumnos(View view) {
+        Intent intent = new Intent(this, MainActivity_ListaAlumnos.class);
+        startActivity(intent);
+        finish();
+    }
 }
 
-/*try{
-        BaseDeDatos.insert("alumnos", null, registro);
-        BaseDeDatos.close();
-        Toast.makeText(this, "Registro exitoso", Toast.LENGTH_LONG).show();
-        } catch (SQLException e){
-        Toast.makeText(this, "No se realizó el registro", Toast.LENGTH_LONG).show();
-        }*/
