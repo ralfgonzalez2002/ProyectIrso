@@ -139,7 +139,9 @@
         android:ems="10"
         android:hint="@string/txt_materia"
         android:inputType="textPersonName"
-        android:gravity="center_horizontal"/>
+        android:gravity="center_horizontal"
+        android:maxLength="30"
+        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ.,"/>
 
     <Button
         android:id="@+id/btn_atras"

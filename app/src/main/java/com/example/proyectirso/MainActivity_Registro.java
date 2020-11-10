@@ -1,6 +1,7 @@
 package com.example.proyectirso;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
@@ -13,6 +14,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -23,21 +26,22 @@ import java.util.regex.Pattern;
 
 
 public class MainActivity_Registro extends AppCompatActivity {
-    private EditText et_mail, et_clave, et_confirmclave, et_nombre, et_telf;
+    private EditText et_mail, et_clave, et_confirmclave, et_nombre, et_telf, et_materia;
     String phone = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main__registro);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         //Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
         //setSupportActionBar(toolbar);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //getSupportActionBar().setDisplayShowHomeEnabled(true);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
         TelephonyManager telephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-
 
         if (ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED
@@ -60,6 +64,7 @@ public class MainActivity_Registro extends AppCompatActivity {
         et_nombre = (EditText) findViewById(R.id.txt_nombre);
         et_telf = (EditText) findViewById((R.id.txt_telf));
         et_telf.setText(phone, EditText.BufferType.EDITABLE);
+        et_materia = (EditText) findViewById(R.id.txt_materia);
 
     }
 
@@ -84,6 +89,7 @@ public class MainActivity_Registro extends AppCompatActivity {
         String confirmclave = et_confirmclave.getText().toString();
         String nombre = et_nombre.getText().toString();
         String telf = et_telf.getText().toString();
+        String materia = et_materia.getText().toString();
 
         if (!mail.isEmpty() && !clave.isEmpty() && !confirmclave.isEmpty() && !nombre.isEmpty() &&
                 !telf.isEmpty()) {
@@ -94,20 +100,24 @@ public class MainActivity_Registro extends AppCompatActivity {
                     if (clave.trim().length() >= 8) {
                         if (confirmclave.trim().length() >= 8) {
                             if (nombre.trim().length() >= 5) {
-                                if (clave.equals(confirmclave)) {
-                                    ContentValues registro = new ContentValues();
+                                if (materia.trim().length() >= 5) {
+                                    if (clave.equals(confirmclave)) {
+                                        ContentValues registro = new ContentValues();
 
-                                    registro.put("mail", mail);
-                                    registro.put("clave", clave);
-                                    registro.put("nombre", nombre);
-                                    registro.put("telf", telf);
+                                        registro.put("mail", mail);
+                                        registro.put("clave", clave);
+                                        registro.put("nombre", nombre);
+                                        registro.put("telf", telf);
 
-                                    BaseDeDatos.insert("profesores", null, registro);
-                                    BaseDeDatos.close();
-                                    IrAtras(view);
-                                    Toast.makeText(this, "Registro exitoso", Toast.LENGTH_LONG).show();
+                                        BaseDeDatos.insert("profesores", null, registro);
+                                        BaseDeDatos.close();
+                                        IrAtras(view);
+                                        Toast.makeText(this, "Registro exitoso", Toast.LENGTH_LONG).show();
+                                    } else {
+                                        Toast.makeText(this, "Las contraseñas no coinciden, verifique", Toast.LENGTH_SHORT).show();
+                                    }
                                 } else {
-                                    Toast.makeText(this, "Las contraseñas no coinciden, verifique", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(this, "El nombre de su Materia debe tener al menos 5 caracteres", Toast.LENGTH_SHORT).show();
                                 }
                             } else {
                                 Toast.makeText(this, "Su nombre debe tener al menos 5 caracteres", Toast.LENGTH_SHORT).show();
@@ -121,9 +131,9 @@ public class MainActivity_Registro extends AppCompatActivity {
                 } else {
                     Toast.makeText(this, "Este email ya se encuentra registrado", Toast.LENGTH_SHORT).show();
                 }
-            } else {
-                Toast.makeText(this, "Mail inválido, por favor verifique", Toast.LENGTH_SHORT).show();
-            }
+            } else
+                Toast.makeText(this, "Mail inválido, por favor verifiques", Toast.LENGTH_SHORT).show();
+            return null;
         } else
             Toast.makeText(this, "Debe completar todos los campos", Toast.LENGTH_SHORT).show();
         return null;

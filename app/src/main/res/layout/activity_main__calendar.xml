@@ -28,7 +28,9 @@
         android:hint="Título"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/txt_descripcion"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:maxLength="50"
+        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,.0123456789"/>
 
     <EditText
         android:id="@+id/et_ubicacion"
@@ -39,7 +41,8 @@
         android:hint="Ubicación"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/btn_agregar"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" android:maxLength="25"
+        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,.0123456789"/>
 
     <EditText
         android:id="@+id/txt_descripcion"
@@ -50,7 +53,9 @@
         android:hint="Descripción"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/et_ubicacion"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:maxLength="50"
+        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,.0123456789"/>
 
     <Button
         android:id="@+id/btn_agregar"
